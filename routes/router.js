@@ -77,3 +77,5 @@ Router.route('/')
         layout: 'layouts/layout'
     })
 })
+
+module.exports = Router;
