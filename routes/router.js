@@ -20,6 +20,7 @@ Router.route('/')
 .get((req,resp), ()=>{
     resp.render('index',{
         title: 'Web app',
+        ItemsName: 'Items',
         data: {
             Items: ItemsArray
         },
@@ -31,6 +32,7 @@ Router.route('/')
     ItemsArray.push(new {name: data.name, description: data.description});
     resp.render('index', {
         title: 'Web-app',
+        ItemsName: 'Items',
         data: {
             Items: ItemsArray
         },
@@ -40,6 +42,7 @@ Router.route('/')
 .get('/events', (req,resp), ()=>{
     resp.render('index',{
         title: 'Web app',
+        ItemsName: 'Events',
         data: {
             Items: EventsArray
         },
@@ -51,6 +54,7 @@ Router.route('/')
     EventsArray.push(new {name: data.name, description: data.description});
     resp.render('index', {
         title: 'Web-app',
+        ItemsName: 'Events',
         data: {
             Items: EventsArray
         },
@@ -60,6 +64,7 @@ Router.route('/')
 .get('/people', (req,resp),()=>{
     resp.render('index',{
         title: 'Web app',
+        ItemsName: 'People',
         data: {
             Items: PeopleArray
         },
@@ -71,6 +76,7 @@ Router.route('/')
     PeopleArray.push(new {name: data.name, description: data.description});
     resp.render('index', {
         title: 'Web-app',
+        ItemsName: 'People',
         data: {
             Items: PeopleArray
         },
