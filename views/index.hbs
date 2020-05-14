@@ -1,0 +1,16 @@
+<div class="col-md-3">
+    <div class="todolist not-done">
+        <h1>Items</h1>
+                            <form method="POST">
+                                <input type="text" name="name" placeholder="write name..."/>
+                                <input type="text" name="description" placeholder="Write todo item text..." />
+                                <button class="btn btn-primary">Add item</button>
+                            </form>
+                            <ul id="sortable" class="list-unstyled">
+                                {{#each Items}}
+                                    <li class="ui-state-default"><span >#{{name}} {{description}}</span></li>
+                                {{/each}}
+                            </ul>
+                        
+                    </div>
+    </div>
