@@ -16,3 +16,14 @@ Router.route('/')
         layout: 'layouts/layout'
     })
 })
+.post((req,resp), () => {
+    data = req.body;
+    ItemsArray.push(new {name: data.name, description: data.description});
+    resp.render('index', {
+        title: 'Web-app',
+        data: {
+            Items: ItemsArray
+        },
+        layout: 'layouts/layout'
+    })
+})
