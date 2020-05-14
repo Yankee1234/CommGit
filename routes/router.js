@@ -9,6 +9,11 @@ EventsArray = [
     { name:'New Year', description: 'Celebrating new year'},
     { name:'Helloween', description: 'Very scar event'},
     { name:'Christmass', description: 'Merry Christmass'}
+];
+PeopleArray = [
+    { name:'Vasilii Pupkin', description: 'expressive, responsible person'},
+    { name:'Fedor Petrov', description: 'quite, impressive, sellfish person'},
+    { name:'Petr Fedorov', description: 'helpful, kind, communicate person'}
 ]
 
 Router.route('/')
@@ -22,7 +27,7 @@ Router.route('/')
     })
 })
 .post((req,resp), () => {
-    data = req.body;
+    let data = req.body;
     ItemsArray.push(new {name: data.name, description: data.description});
     resp.render('index', {
         title: 'Web-app',
@@ -42,12 +47,32 @@ Router.route('/')
     })
 })
 .post('/events', (req,resp), () => {
-    data = req.body;
+    let data = req.body;
     EventsArray.push(new {name: data.name, description: data.description});
     resp.render('index', {
         title: 'Web-app',
         data: {
             Items: EventsArray
+        },
+        layout: 'layouts/layout'
+    })
+})
+.get('/people', (req,resp),()=>{
+    resp.render('index',{
+        title: 'Web app',
+        data: {
+            Items: PeopleArray
+        },
+        layout: 'layouts/layout'
+    })
+})
+.post('/people',(req,resp), () => {
+    let data = req.body;
+    PeopleArray.push(new {name: data.name, description: data.description});
+    resp.render('index', {
+        title: 'Web-app',
+        data: {
+            Items: PeopleArray
         },
         layout: 'layouts/layout'
     })
